@@ -17,6 +17,6 @@ WORKDIR /app
 
 COPY --from=build /app/publish .
 
-EXPOSE 5000
+EXPOSE 80
 
 ENTRYPOINT ["dotnet", "dotnet-demoapp.dll"]
