@@ -1,12 +1,11 @@
 # Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-WORKDIR /build
+WORKDIR /src
 
-COPY src ./src
+COPY . .
 
-WORKDIR /build/src
-RUN dotnet restore 
+RUN dotnet restore dotnet-demoapp.csproj
 
 RUN dotnet publish dotnet-demoapp.csproj -c Release -o /app/publish
 
